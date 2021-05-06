@@ -84,7 +84,7 @@ def getIPInterfaceBrief(deviceIP):
         },
         "id": 3
       }
-    }
+    ]
 
     '''
 
@@ -143,7 +143,7 @@ getNewHostName(HostName)
 
 #Asks the user to enter a new ip address and splits it into a string so it can be verified.
 IpAddress= input('Enter a new IP Address:')
-print IpAddress
+print(IpAddress)
 
 ipList =  IpAddress.split(".")
 
