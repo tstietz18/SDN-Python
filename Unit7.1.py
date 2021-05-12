@@ -143,7 +143,7 @@ getNewHostName(HostName)
 
 #Asks the user to enter a new ip address and splits it into a string so it can be verified.
 IpAddress= input('Enter a new IP Address:')
-print(IpAddress)
+print IpAddress
 
 ipList =  IpAddress.split(".")
 
@@ -154,7 +154,7 @@ def AddToIP(ipList):
     octet3 = octet3 + 2
     myList[2] = str(octet3)
 
-    newIP = myList [0] + "." + myList[1] + "." + myList[2] + "." + myList[3]
+    newIP = myList[0] + "." + myList[1] + "." + myList[2] + "." + myList[3]
 
     print("newIP")
 
