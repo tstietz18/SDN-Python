@@ -21,8 +21,8 @@ import json
 """
 Modify these please
 """
-switchuser='USERID'
-switchpassword='PASSWORD'
+switchuser='cisco'
+switchpassword='cisco'
 
 url='http://10.10.20.177/ins'
 myheaders={'content-type':'application/json-rpc'}
