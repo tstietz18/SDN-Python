@@ -44,11 +44,11 @@ while validHost == False:
     validHost = isvalidhostname(HostName)
     if validHost == False:
         print("Enter a Valid Hostname")
-getisvalidhostname(HostName)
+getNewHostName(HostName)
 
 #Asks the user to enter an Ip address and splits it into four integers.
 IpAddress= input('Enter a new IP Address:')
-print(IpAddress)
+print IpAddress
 
 ipList =  IpAddress.split(".")
 
@@ -83,7 +83,7 @@ def ValidateIp(newIP):
     else:
          print("Enter a Valid Ip")
 
-def GetNewIpAddress(IpAddress):
+def GetNewIpAddress(IpAddress + SubnetMask)
 
     """
     Be sure to run feature nxapi first on Nexus Switch
@@ -94,26 +94,24 @@ def GetNewIpAddress(IpAddress):
     switchpassword='cisco'
 
     url='https://10.10.20.177/ins'
-    myheaders={'content-type':'application/json-rpc'}
-    payload=[
-      {
-        "jsonrpc": "2.0",
-        "method": "cli",
-        "params": {
-        "cmd": "configure terminal",
-        "version": 1
-        },
-        "id": 1
-      },
-       {
-        "jsonrpc": "2.0",
-        "method": "cli",
-        "params": {
-        "cmd": "interface " + IpAddress,
-        "version": 1
-        },
-        "id": 2
-      },
+    myheaders={'content-type':'application/json-rpc{
+            "jsonrpc": "2.0",
+            "method": "cli",
+            "params": {
+              "cmd": "configure terminal",
+              "version": 1
+            },
+            "id": 1
+          },
+          {
+            "jsonrpc": "2.0",
+            "method": "cli",
+            "params": {
+              "cmd": "ip address " + IpAddress + SubnetMask,
+              "version": 1
+             },
+            "id": 2
+          }
         ]
       
     '''
@@ -123,7 +121,7 @@ def GetNewIpAddress(IpAddress):
     '''
 
 
-## + "255.255.255.0"
+
 ##"10.1.1.254"
 ##
 ##['10','1','1','254']
