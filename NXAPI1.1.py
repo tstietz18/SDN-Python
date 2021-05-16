@@ -16,7 +16,7 @@
 import requests
 import json
 
-def ChangeHostName()
+def ChangeHostName(NewHostName):
    
     """
     Modify these please
@@ -40,7 +40,7 @@ def ChangeHostName()
         "jsonrpc": "2.0",
         "method": "cli",
         "params": {
-        "cmd": "hostname dist-sw01-9k",
+        "cmd": "hostname" + NewHostName,
         "version": 1
         },
         "id": 2
@@ -55,11 +55,11 @@ def ChangeHostName()
 
     response = requests.post(url,data=json.dumps(payload), headers=myheaders,auth=(switchuser,switchpassword)).json()
 
-    return response
+    #return response
     
 #Main Code
 
-responseHostName = 
+NewHostName = input("Enter a new hostname:")
 
 
 #function to Validate a Hostname
