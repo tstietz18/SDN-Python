@@ -96,10 +96,11 @@ def getIPInterfaceBrief(deviceIP):
 
     return response
 
+ipInterfaceBriefinterfaces = response
 
 print("Name\t\tProtocol\tLink\t\tAddress")
 
-interfaces = response["result"]["body"]["TABLE_intf"]["ROW_intf"]
+ipInterfaceBriefInterfaces = response["result"]["body"]["TABLE_intf"]["ROW_intf"]
 
 for interface in interfaces:
     print(interface['intf-name']) #individually prints each nested dictionary within the main dictionary.
