@@ -1,5 +1,5 @@
 # ---------------------------------------------------------
-#Name: Unit 3 Lab 1.2
+#Name: Nexos Sandbox 2
 #      
 #Author:Tory Stietz    
 # 
@@ -15,6 +15,8 @@
 
 import requests
 import json
+
+NewHostName = input("Enter a new hostname:")
 
 def isvalidhostname(HostName):
     if HostName[0].isalpha() != True:
@@ -33,7 +35,7 @@ HostName = 'R-1'
 validhost = isvalidhostname(HostName)
 print(validhost)
    
-def getNewHostName(): 
+def getNewHostName(HostName): 
 
     """
     Be sure to run feature nxapi first on Nexus Switch
