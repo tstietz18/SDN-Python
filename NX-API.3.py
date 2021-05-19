@@ -16,7 +16,7 @@
 import requests
 import json
 
-NewHostName = input("Enter a new hostname:")
+
 
 def isvalidhostname(HostName):
     if HostName[0].isalpha() != True:
@@ -31,9 +31,6 @@ def isvalidhostname(HostName):
      
     return True
 
-HostName = 'R-1'
-validhost = isvalidhostname(HostName)
-print(validhost)
    
 def getNewHostName(HostName): 
 
@@ -61,7 +58,7 @@ def getNewHostName(HostName):
         "jsonrpc": "2.0",
         "method": "cli",
         "params": {
-          "cmd": "hostname" + NewHostName,
+          "cmd": "hostname " + HostName,
           "version": 1
          },
         "id": 2
@@ -74,6 +71,9 @@ def getNewHostName(HostName):
     verify=False below is to accept untrusted certificate
 
     '''
+
+##MAIN
+    
 validHost = False
 while validHost == False:
     HostName = input("What do you want to name this device?:")
@@ -83,7 +83,7 @@ while validHost == False:
     if validHost == False:
         print("Enter a Valid Hostname")
         
-
+getNewHostName(HostName)
 
 
 # end of script
