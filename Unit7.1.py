@@ -3,11 +3,11 @@
 #      
 #Author:Tory Stietz    
 # 
-#Date created: 2/7/2021
+#Date created:5/18/2021
 # 
-#Script Function: Print Ip interface brief 
+#Script Function: Change an IP Address
 # 
-#Script References: Unit 5 assessment
+#Script References: Unit 7
 # 
 #Special Instructions:
 #
@@ -44,7 +44,7 @@ def isvalidhostname(HostName):
     return True
 
 
-def getIPInterfaceBrief(deviceIP):
+def changeIpAddress(deviceIP, intName, ipAddr):
 
     """
     Be sure to run feature nxapi first on Nexus Switch
@@ -96,18 +96,16 @@ def getIPInterfaceBrief(deviceIP):
 
     return response
 
-ipInterfaceBriefinterfaces = response
+response = getipInterfaceBrief
 
 print("Name\t\tProtocol\tLink\t\tAddress")
 
-ipInterfaceBriefInterfaces = response["result"]["body"]["TABLE_intf"]["ROW_intf"]
+ipInterfaceBrief = response["result"]["body"]["TABLE_intf"]["ROW_intf"]
+
+print("-" * 60)
 
 for interface in interfaces:
     print(interface['intf-name']) #individually prints each nested dictionary within the main dictionary.
-#prints the headings inside the parthenses spaced out with the \t tabs
-print("Name\t\tProtocol\tLink\t\tAddress")
-#prints 60 dashes to act as a divider between the headings and the actual device information.
-print("-" * 60)
 
 #references the section of command that says interfaces = response["result"]["body"]["TABLE_intf"]["ROW_intf"]
 for info in interfaces :
@@ -130,7 +128,7 @@ interfacename = input("Which interface address would you like to change:")
 print("Interface is:" + interfacename)
 
 
-#Validates the interface name and allows us to change the ip address???
+""" #Validates the interface name and allows us to change the ip address???
 validHost = False
 while validHost == False:
     HostName = input("What do you want to name this device?:")
@@ -140,7 +138,7 @@ while validHost == False:
     if validHost == False:
         print("Enter a Valid Hostname")
 getNewHostName(HostName)
-
+ """
 
 #Asks the user to enter a new ip address and splits it into a string so it can be verified.
 IpAddress= input('Enter a new IP Address:')
