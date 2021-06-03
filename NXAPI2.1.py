@@ -1,19 +1,15 @@
-#Asks the user to enter an Ip address and splits it into four integers.
-IpAddress= input('Enter a new IP Address:')
-print(IpAddress)
 
-ipList =  IpAddress.split(".")
 
 #Adds two to the new Ip Address and prints the Address.
-def AddToIP(ipList):
+def AddToIP(myList):
 
     octet3 = int(myList[2])
     octet3 = octet3 + 2
     myList[2] = str(octet3)
 
-    newIP = myList [0] + "." + myList[1] + "." + myList[2] + "." + myList[3]
+    newIP = myList[0] + "." + myList[1] + "." + myList[2] + "." + myList[3]
 
-    print("newIP")
+    return newIP
 
 #Validates the new Ip Address.
 def ValidateIp(newIP):
@@ -73,7 +69,15 @@ def GetNewIpAddress(IpAddress):
     verify=False below is to accept untrusted certificate
 
     '''
+#Asks the user to enter an Ip address and splits it into four integers.
+IpAddress= input('Enter a new IP Address:')
+print(IpAddress)
 
+ipList =  IpAddress.split(".")
+
+newIP = AddToIP(ipList)
+
+print(newIP)
 
 ## + "255.255.255.0"
 ##"10.1.1.254"
